@@ -2,12 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0231dba4-3968-4bfd-b3c2-b8d7f691401a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/codes/utils/ConnectPoolUtils.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/scala_compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/scala_compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/codes/Start/StartTask.scala" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/codes/conf/ConfigManager.scala" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/codes/constant/Constants.scala" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/notes.txt" beforeDir="false" afterPath="$PROJECT_DIR$/notes.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/codes/test.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/codes/test.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/codes/test.scala" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/codes/utils/UtilsForProj.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/codes/utils/UtilsForProj.scala" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -24,22 +23,22 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/codes/test.scala">
+        <entry file="file://$PROJECT_DIR$/src/main/codes/Start/StartTask.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="312">
-              <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
+            <state relative-caret-position="352">
+              <caret line="41" lean-forward="true" selection-start-line="41" selection-end-line="41" />
               <folding>
-                <element signature="e#0#27#0" expanded="true" />
+                <element signature="e#15#40#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/.idea/scala_compiler.xml">
+        <entry file="file://$PROJECT_DIR$/src/main/codes/constant/Constants.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="10" column="10" lean-forward="true" selection-start-line="10" selection-start-column="10" selection-end-line="10" selection-end-column="10" />
+            <state relative-caret-position="252">
+              <caret line="12" selection-start-line="12" selection-end-line="12" />
             </state>
           </provider>
         </entry>
@@ -47,15 +46,32 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/codes/utils/UtilsForProj.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="451">
-              <caret line="224" lean-forward="true" selection-start-line="224" selection-end-line="224" />
+            <state relative-caret-position="357">
+              <caret line="217" column="56" selection-start-line="217" selection-start-column="56" selection-end-line="217" selection-end-column="56" />
               <folding>
-                <element signature="e#15#42#0" expanded="true" />
-                <element signature="e#202#2446#0" />
-                <element signature="e#2450#6276#0" />
-                <element signature="e#6280#6432#0" />
-                <element signature="e#6435#6601#0" />
-                <element signature="e#6602#6640#0" />
+                <element signature="e#244#2488#0" />
+                <element signature="e#350#2484#0" />
+                <element signature="e#369#2477#0" />
+                <element signature="e#2491#6317#0" />
+                <element signature="e#2584#6301#0" />
+                <element signature="e#2590#6300#0" />
+                <element signature="e#6320#6472#0" />
+                <element signature="e#6475#6641#0" />
+                <element signature="e#6644#6948#0" />
+                <element signature="e#6951#7172#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/codes/conf/ConfigManager.scala">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="273">
+              <caret line="29" selection-start-line="29" selection-end-line="29" />
+              <folding>
+                <element signature="e#42#81#0" />
+                <element signature="e#397#430#0" />
               </folding>
             </state>
           </provider>
@@ -71,6 +87,13 @@
         </entry>
       </file>
     </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
@@ -88,9 +111,12 @@
         <option value="$PROJECT_DIR$/notes.txt" />
         <option value="$PROJECT_DIR$/src/main/codes/utils/ConnectPoolUtils.scala" />
         <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/src/main/codes/utils/UtilsForProj.scala" />
-        <option value="$PROJECT_DIR$/src/main/codes/test.scala" />
         <option value="$PROJECT_DIR$/.idea/scala_compiler.xml" />
+        <option value="$PROJECT_DIR$/src/main/codes/test.scala" />
+        <option value="$PROJECT_DIR$/src/main/codes/utils/UtilsForProj.scala" />
+        <option value="$PROJECT_DIR$/src/main/codes/constant/Constants.scala" />
+        <option value="$PROJECT_DIR$/src/main/codes/conf/ConfigManager.scala" />
+        <option value="$PROJECT_DIR$/src/main/codes/Start/StartTask.scala" />
       </list>
     </option>
   </component>
@@ -106,8 +132,7 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="71" />
-    <option name="y" value="15" />
+    <option name="x" value="950" />
     <option name="width" value="980" />
     <option name="height" value="1050" />
   </component>
@@ -119,8 +144,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="CatdeaLogs" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -131,11 +154,6 @@
             <path>
               <item name="DMP" type="b2602c69:ProjectViewProjectNode" />
               <item name="DMP" type="462c0819:PsiDirectoryNode" />
-              <item name=".idea" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="DMP" type="b2602c69:ProjectViewProjectNode" />
-              <item name="DMP" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -155,15 +173,39 @@
               <item name="DMP" type="b2602c69:ProjectViewProjectNode" />
               <item name="DMP" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="codes" type="462c0819:PsiDirectoryNode" />
-              <item name="utils" type="462c0819:PsiDirectoryNode" />
+              <item name="outPutFiles" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="DMP" type="b2602c69:ProjectViewProjectNode" />
+              <item name="DMP" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="outPutFiles" type="462c0819:PsiDirectoryNode" />
+              <item name="out" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="DMP" type="b2602c69:ProjectViewProjectNode" />
+              <item name="DMP" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="outPutFiles" type="462c0819:PsiDirectoryNode" />
+              <item name="out" type="462c0819:PsiDirectoryNode" />
+              <item name="provincename=广东省" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="DMP" type="b2602c69:ProjectViewProjectNode" />
+              <item name="DMP" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="outPutFiles" type="462c0819:PsiDirectoryNode" />
+              <item name="out" type="462c0819:PsiDirectoryNode" />
+              <item name="provincename=广东省" type="462c0819:PsiDirectoryNode" />
+              <item name="cityname=东莞市" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="CatdeaLogs" />
       <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -179,6 +221,11 @@
     <property name="settings.editor.selected.configurable" value="MavenSettings" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\programs\java_idea\DMP\src\main\codes\Start" />
+      <recent name="D:\programs\java_idea\DMP\src\main\codes" />
+      <recent name="D:\programs\java_idea\DMP\src\main\Start" />
+    </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="utils" />
     </key>
@@ -198,7 +245,20 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.StartTask">
+    <configuration name="StartTask" type="Application" factoryName="Application" temporary="true">
+      <option name="MAIN_CLASS_NAME" value="Start.StartTask" />
+      <module name="DMP" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Start.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="test" type="Application" factoryName="Application" temporary="true">
       <option name="MAIN_CLASS_NAME" value="test" />
       <module name="DMP" />
@@ -208,6 +268,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.StartTask" />
         <item itemvalue="Application.test" />
       </list>
     </recent_temporary>
@@ -227,7 +288,8 @@
       <workItem from="1563785281786" duration="348000" />
       <workItem from="1563785669112" duration="559000" />
       <workItem from="1563786268871" duration="7068000" />
-      <workItem from="1563794993130" duration="3757000" />
+      <workItem from="1563794993130" duration="3825000" />
+      <workItem from="1563798951612" duration="1505000" />
     </task>
     <task id="LOCAL-00001" summary="v1">
       <created>1563794970762</created>
@@ -236,17 +298,24 @@
       <option name="project" value="LOCAL" />
       <updated>1563794970766</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="v2">
+      <created>1563798902562</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1563798902563</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="15775000" />
+    <option name="totallyTimeSpent" value="17348000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="848" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.15549597" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.17828418" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -255,7 +324,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.17318435" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.174581" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -266,7 +335,7 @@
       <window_info anchor="bottom" id="Terminal" order="10" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="bottom" id="Java Enterprise" order="12" />
-      <window_info active="true" anchor="bottom" id="Messages" order="13" visible="true" weight="0.19273743" />
+      <window_info anchor="bottom" id="Messages" order="13" weight="0.19273743" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -285,7 +354,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="v1" />
-    <option name="LAST_COMMIT_MESSAGE" value="v1" />
+    <MESSAGE value="v2" />
+    <option name="LAST_COMMIT_MESSAGE" value="v2" />
   </component>
   <component name="editorHistoryManager">
     <entry file="jar://$USER_HOME$/.m2/repository/org/apache/spark/spark-sql_2.11/2.2.0/spark-sql_2.11-2.2.0-sources.jar!/org/apache/spark/sql/SparkSession.scala">
@@ -313,13 +383,6 @@
     <entry file="file://$PROJECT_DIR$/src/files/2016-10-01_06_p1_invalid.1475274123982.log">
       <provider selected="true" editor-type-id="LogFileEditorProvider" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/notes.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="12" column="25" selection-start-line="12" selection-start-column="25" selection-end-line="12" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/codes/utils/ConnectPoolUtils.scala">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-63">
@@ -327,12 +390,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/outPutFiles/out/provincename=安徽省/cityname=合肥市/part-00000-8fcd66a2-8afa-483e-aed2-b4019e8317cf.c000.json">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/outPutFiles/out/provincename=安徽省/cityname=宣城市/part-00001-8fcd66a2-8afa-483e-aed2-b4019e8317cf.c000.json">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/outPutFiles/out/provincename=安徽省/cityname=合肥市/part-00000-8fcd66a2-8afa-483e-aed2-b4019e8317cf.c000.json" />
+    <entry file="file://$PROJECT_DIR$/src/outPutFiles/out/provincename=安徽省/cityname=宣城市/part-00001-8fcd66a2-8afa-483e-aed2-b4019e8317cf.c000.json" />
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="311">
@@ -340,34 +399,91 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/codes/utils/UtilsForProj.scala">
+    <entry file="file://$PROJECT_DIR$/notes.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="451">
-          <caret line="224" lean-forward="true" selection-start-line="224" selection-end-line="224" />
-          <folding>
-            <element signature="e#15#42#0" expanded="true" />
-            <element signature="e#202#2446#0" />
-            <element signature="e#2450#6276#0" />
-            <element signature="e#6280#6432#0" />
-            <element signature="e#6435#6601#0" />
-            <element signature="e#6602#6640#0" />
-          </folding>
+        <state relative-caret-position="252">
+          <caret line="12" column="25" selection-start-line="12" selection-start-column="25" selection-end-line="12" selection-end-column="25" />
         </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/compiler.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/outPutFiles/out/part-00000-121d1fab-4ef4-4992-ad06-a28deab2baf4-c000.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-378" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/.idea/scala_compiler.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
-          <caret line="10" column="10" lean-forward="true" selection-start-line="10" selection-start-column="10" selection-end-line="10" selection-end-column="10" />
+          <caret line="10" column="10" selection-start-line="10" selection-start-column="10" selection-end-line="10" selection-end-column="10" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/codes/test.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="312">
-          <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
+        <state relative-caret-position="425">
+          <caret line="23" column="39" lean-forward="true" selection-start-line="23" selection-start-column="39" selection-end-line="23" selection-end-column="39" />
           <folding>
             <element signature="e#0#27#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/codes/Start/test$.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="84">
+          <caret line="4" column="25" selection-start-line="4" selection-start-column="25" selection-end-line="4" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/codes/constant/Constants.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="12" selection-start-line="12" selection-end-line="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/codes/conf/ConfigManager.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="273">
+          <caret line="29" selection-start-line="29" selection-end-line="29" />
+          <folding>
+            <element signature="e#42#81#0" />
+            <element signature="e#397#430#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/codes/utils/UtilsForProj.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="217" column="56" selection-start-line="217" selection-start-column="56" selection-end-line="217" selection-end-column="56" />
+          <folding>
+            <element signature="e#244#2488#0" />
+            <element signature="e#350#2484#0" />
+            <element signature="e#369#2477#0" />
+            <element signature="e#2491#6317#0" />
+            <element signature="e#2584#6301#0" />
+            <element signature="e#2590#6300#0" />
+            <element signature="e#6320#6472#0" />
+            <element signature="e#6475#6641#0" />
+            <element signature="e#6644#6948#0" />
+            <element signature="e#6951#7172#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/outPutFiles/out/provincename=广东省/cityname=东莞市/part-00000-ea0fcdab-f7bd-485a-9133-e115d0d88ebb.c000.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/codes/Start/StartTask.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="352">
+          <caret line="41" lean-forward="true" selection-start-line="41" selection-end-line="41" />
+          <folding>
+            <element signature="e#15#40#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -451,7 +567,7 @@
           <splitter-proportions>
             <option name="proportions">
               <list>
-                <option value="0.15882353" />
+                <option value="0.49407965" />
               </list>
             </option>
           </splitter-proportions>

@@ -2,6 +2,7 @@ package utils
 
 import java.util.Properties
 
+import conf.ConfigManager
 import org.apache.spark.rdd.RDD
 import org.apache.spark.sql.{DataFrame, Row}
 import org.apache.spark.sql.types.{DoubleType, IntegerType, StringType, StructField, StructType}
@@ -210,16 +211,13 @@ object UtilsForProj {
   }
   /* 把数据存入mysql */
   def loadToMysql(ct_prov_city_df: DataFrame): Unit ={
-    val url: String = "jdbc:mysql://localhost:3306/dmp"
-    val properties = new Properties()
-    properties.put("user", "root")
-    properties.put("password", "1234")
-    ct_prov_city_df.write.jdbc(url, "dmp_table", properties)
+    val jdbc: (String, Properties) = ConfigManager.fetchJDBC()
+    ct_prov_city_df.write.jdbc(jdbc._1, "dmp_table", jdbc._2)
   }
   /* 以json形式存入文件 */
   def loadToJsonFile(ct_prov_city_df: DataFrame): Unit ={
     ct_prov_city_df.write
-//      .partitionBy("provincename", "cityname")
+      .partitionBy("provincename", "cityname")
       .json("D:\\programs\\java_idea\\DMP\\src\\outPutFiles\\out")
   }
 
