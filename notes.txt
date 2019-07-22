@@ -9,4 +9,5 @@
     修改scala_compiler.xml文件
     删除掉参数行包含-make:transitive
 
-
+文件的输出路径不能存在
+    df.write.parquet(path)
