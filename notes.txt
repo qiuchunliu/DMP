@@ -1,0 +1,12 @@
+
+报错： Error:scalac: bad option: '-make:transitive'
+    解决：
+    Scala自2.11版本开始，移除了弃用的-make选项，
+    而idea的scala插件没有更新，
+    因此，Scala由原先的2.10升级到2.11后，就出现了上述错误。
+    关闭idea
+    打开项目所在位置并cd .idea
+    修改scala_compiler.xml文件
+    删除掉参数行包含-make:transitive
+
+
