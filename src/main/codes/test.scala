@@ -1,5 +1,7 @@
 import org.apache.spark.rdd.RDD
-import org.apache.spark.sql.SparkSession
+import org.apache.spark.sql.types.StructType
+import org.apache.spark.sql.{DataFrame, Row, SparkSession}
+import utils.UtilsForProj
 
 object test {
 
@@ -12,7 +14,7 @@ object test {
   sk.sqlContext.setConf("spark.sql.parquet.compression.codec", "snappy")
 
   def main(args: Array[String]): Unit = {
-    print()
+    runIt()
   }
 
   def runIt(): Unit ={
@@ -20,7 +22,11 @@ object test {
       "ea\\DMP\\src\\files\\2016-10-" +
       "01_06_p1_invalid.1475274123982.log")
     val arrRdd: RDD[Array[String]] = lines.map(e => {e.split(",", -1)}).filter(_.length >= 85)
-    utils.UtilsForProj(arrRdd)  // 创建 Row的RDD
+    val rowRdd: RDD[Row] = UtilsForProj.makeRow(arrRdd)  // 创建 Row 的 RDD
+    val struct: StructType = UtilsForProj.makeStructure()
+    val df: DataFrame = sk.createDataFrame(rowRdd, struct)
+    df.createTempView("vv")
+    df.sqlContext.sql("select sessionid from vv limit 3").show()
   }
 
 }
