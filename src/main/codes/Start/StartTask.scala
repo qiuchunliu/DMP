@@ -23,14 +23,11 @@ object StartTask {
       val rowRdd: RDD[Row] = UtilsForProj.makeRow(arrRdd)  // 创建 Row 的 RDD
       val struct: StructType = UtilsForProj.makeStructure()
       val df: DataFrame = sk.createDataFrame(rowRdd, struct)
-      import sk.implicits._
-      val ct_prov_city_df: DataFrame = df.rdd.map(e => {
-        ((e.getAs[String]("provincename"),
-          e.getAs[String]("cityname")), 1)
-      })
-        .reduceByKey(_+_)  // 按照省市进行统计
-        .map(t => (t._2, t._1._1, t._1._2))  // 返回一个 (省，市，个数)的rdd
-        .toDF("ct", "provincename", "cityname")
+
+//      // 将原始数据保存在parquet文件
+//      df.write.parquet("D:\\programs\\java_idea\\DMP\\src\\outPutFiles\\parquetFile")
+
+      val ct_prov_city_df: DataFrame = UtilsForProj.fetchFields(df)
 
       /* 把数据存入mysql */
 //          UtilsForProj.loadToMysql(ct_prov_city_df)

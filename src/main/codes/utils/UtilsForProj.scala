@@ -2,6 +2,7 @@ package utils
 
 import java.util.Properties
 
+import Start.StartTask.sk
 import conf.ConfigManager
 import org.apache.spark.rdd.RDD
 import org.apache.spark.sql.{DataFrame, Row}
@@ -219,6 +220,18 @@ object UtilsForProj {
     ct_prov_city_df.write
       .partitionBy("provincename", "cityname")
       .json("D:\\programs\\java_idea\\DMP\\src\\outPutFiles\\out")
+  }
+  /* 获取需求一字段*/
+  def fetchFields(df: DataFrame): DataFrame ={
+    import sk.implicits._
+    val ct_prov_city_df: DataFrame = df.rdd.map(e => {
+      ((e.getAs[String]("provincename"),
+        e.getAs[String]("cityname")), 1)
+    })
+      .reduceByKey(_+_)  // 按照省市进行统计
+      .map(t => (t._2, t._1._1, t._1._2))  // 返回一个 (省，市，个数)的rdd
+      .toDF("ct", "provincename", "cityname")
+    ct_prov_city_df
   }
 
 

@@ -1,9 +1,18 @@
 <component name="ProjectDictionaryState">
   <dictionary name="qiuchunliu">
     <words>
+      <w>adorderid</w>
+      <w>cityname</w>
       <w>dependencyfile</w>
       <w>hbase</w>
+      <w>isbid</w>
+      <w>isbilling</w>
+      <w>iseffective</w>
+      <w>iswin</w>
+      <w>processnode</w>
       <w>proj</w>
+      <w>provincename</w>
+      <w>requestmode</w>
     </words>
   </dictionary>
 </component>
