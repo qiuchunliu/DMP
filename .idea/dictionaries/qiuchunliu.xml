@@ -2,17 +2,29 @@
   <dictionary name="qiuchunliu">
     <words>
       <w>adorderid</w>
+      <w>adpayment</w>
+      <w>adplatformproviderid</w>
+      <w>appdict</w>
+      <w>appid</w>
+      <w>appname</w>
+      <w>brcast</w>
       <w>cityname</w>
       <w>dependencyfile</w>
+      <w>devicetype</w>
       <w>hbase</w>
       <w>isbid</w>
       <w>isbilling</w>
       <w>iseffective</w>
+      <w>ispname</w>
       <w>iswin</w>
+      <w>keyist</w>
+      <w>keylist</w>
+      <w>networkmannername</w>
       <w>processnode</w>
       <w>proj</w>
       <w>provincename</w>
       <w>requestmode</w>
+      <w>winprice</w>
     </words>
   </dictionary>
 </component>

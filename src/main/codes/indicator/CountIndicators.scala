@@ -1,6 +1,8 @@
 package indicator
 
 import conf.ConfigManager
+import indicatorUtils.IndicatorsUtils
+import org.apache.spark.broadcast.Broadcast
 import org.apache.spark.rdd.RDD
 import org.apache.spark.sql.{DataFrame, SparkSession}
 
@@ -10,8 +12,36 @@ import org.apache.spark.sql.{DataFrame, SparkSession}
   */
 object CountIndicators {
 
+  private val df: DataFrame = fetchFile()
+
   def main(args: Array[String]): Unit = {
-//    fetchIndicatorFields().take(4).foreach(println)
+    test()
+
+  }
+
+  // 创建 app 映射文件
+  def create_appdict_file(): Unit ={
+    val ssc: SparkSession = ConfigManager.fetchSparkSession()
+    val lines: RDD[String] = ssc.sparkContext.textFile("D:\\programs\\java_idea\\DMP\\src\\files\\app_dict.txt")
+    lines
+      .map(e => e.split("\t"))  // 对字符串进行分割
+      .filter(_.length >= 5)  // 取出长度大于等于5 的
+      .map(t => (t(1).trim, t(4).trim))  // 取出名字和url
+      .saveAsTextFile("D:\\programs\\java_idea\\DMP\\src\\outPutFiles\\app_dict")
+
+
+  }
+
+  /* 读取app映射文件 */
+  def fetchAppDict(): Broadcast[RDD[(String, String)]] ={
+      val ssc: SparkSession = ConfigManager.fetchSparkSession()
+      val lines: RDD[String] = ssc
+        .sparkContext.textFile("D:\\programs\\java_idea\\DMP\\src\\outPutFiles\\app_dict")
+      val br: RDD[(String, String)] = lines.map(e => {
+        (e.substring(e.indexOf(",")+1, e.indexOf(")")),e.substring(1, e.indexOf(",")))
+      })
+    val brcast: Broadcast[RDD[(String, String)]] = ssc.sparkContext.broadcast(br)
+    brcast
   }
 
   /* 读取parquet文件 */
@@ -23,26 +53,136 @@ object CountIndicators {
     df
   }
 
-  /* 获取所需字段 */
-  def fetchIndicatorFields(): RDD[(Int, Int, Int, Int, Int, Int, Int)] ={
-    val dfForIndicator: DataFrame = fetchFile()
-    dfForIndicator.rdd.map(row => {
-      // 数据请求方式（1:请求、2:展示、3:点击）
-      val requestmode: Int = row.getAs[Int]("requestmode")
-      // 流程节点（1：请求量 kpi 2：有效请求 3：广告请求）
-      val processnode: Int = row.getAs[Int]("processnode")
-      // 有效标识（有效指可以正常计费的）(0：无效 1：有效
-      val iseffective: Int = row.getAs[Int]("iseffective")
-      // 是否收费（0：未收费 1：已收费）
-      val isbilling: Int = row.getAs[Int]("isbilling")
-      // 是否竞价
-      val isbid: Int = row.getAs[Int]("isbid")
-      // 是否竞价成功
-      val iswin: Int = row.getAs[Int]("iswin")
-      // 广告id
-      val adorderid: Int = row.getAs[Int]("adorderid")
-      (requestmode, processnode, iseffective, isbilling, isbid, iswin, adorderid)
-    })
+  /* 按照不同key统计指标 */
+  def indicatorsOfKeys(): Unit ={
+    // 按地域统计指标
+    val areaKeyList: List[String] = List[String]("provincename", "cityname")
+    IndicatorsUtils.indicatorsOfKeylist(df, areaKeyList)
+    // 按照运营商统计指标
+    val ispKeyList: List[String] = List[String]("ispname")
+    IndicatorsUtils.indicatorsOfKeylist(df, ispKeyList)
+    // 按照网络统计指标
+    val netKeyList: List[String] = List[String]("networkmannername")
+    IndicatorsUtils.indicatorsOfKeylist(df, netKeyList)
+
+
   }
 
+  /* 地域分布指标 sql 版 */
+  def indicatorsOfArea_SQL(): Unit ={
+    df.createTempView("vv")
+    df.sqlContext.sql(
+      "" +
+        "select " +
+        "temp.provincename, " +
+        "temp.cityname, " +
+        "sum(temp.n1)," +
+        "sum(temp.n2)," +
+        "sum(temp.n3)," +
+        "sum(temp.n4)," +
+        "sum(temp.n5)," +
+        "sum(temp.n6)," +
+        "sum(temp.n7)," +
+        "sum(temp.n8)," +
+        "sum(temp.n9) from " +
+        "(select " +
+        "provincename as provincename, " +
+        "cityname as cityname, " +
+        "if(requestmode == 1 and processnode >= 1,1,0) as n1," +
+        "if(requestmode == 1 and processnode >= 2,1,0) as n2," +
+        "if(requestmode == 1 and processnode == 3,1,0) as n3," +
+        "if(iseffective == 1 and isbilling == 1 and isbid == 1,1,0) as n4," +
+        "if(iseffective == 1 and isbilling == 1 and isbid == 1 and iswin == 1 and adorderid != 0,1,0) as n5," +
+        "if(requestmode == 2 and iseffective == 1,1,0) as n6," +
+        "if(requestmode == 3 and iseffective == 1,1,0) as n7," +
+        "if(iseffective == 1 and isbilling == 1 and iswin == 1,1,0) as n8," +
+        "if(iseffective == 1 and isbilling == 1 and iswin == 1,1,0) as n9 " +
+        "from vv) temp " +
+        "group by " +
+        "temp.provincename, temp.cityname limit 5"
+    ).show()
+  }
+  /* 设备分类指标 sql 版 */
+  def indicatorsOfDevicetype_SQL(): Unit ={
+    df.createTempView("vv")
+    df.sqlContext.sql(
+      "" +
+        "select " +
+        "temp.device, " +
+        "sum(temp.n1)," +
+        "sum(temp.n2)," +
+        "sum(temp.n3)," +
+        "sum(temp.n4)," +
+        "sum(temp.n5)," +
+        "sum(temp.n6)," +
+        "sum(temp.n7)," +
+        "sum(temp.n8)," +
+        "sum(temp.n9) from " +
+        "(select " +
+        "case devicetype " +
+        "when 1 then '手机' " +
+        "when 2 then '平板' " +
+        "else '其他' " +
+        "end as device," +
+        "if(requestmode == 1 and processnode >= 1,1,0) as n1," +
+        "if(requestmode == 1 and processnode >= 2,1,0) as n2," +
+        "if(requestmode == 1 and processnode == 3,1,0) as n3," +
+        "if(iseffective == 1 and isbilling == 1 and isbid == 1,1,0) as n4," +
+        "if(iseffective == 1 and isbilling == 1 and isbid == 1 and iswin == 1 and adorderid != 0,1,0) as n5," +
+        "if(requestmode == 2 and iseffective == 1,1,0) as n6," +
+        "if(requestmode == 3 and iseffective == 1,1,0) as n7," +
+        "if(iseffective == 1 and isbilling == 1 and iswin == 1,1,0) as n8," +
+        "if(iseffective == 1 and isbilling == 1 and iswin == 1,1,0) as n9 " +
+        "from vv) temp " +
+        "group by " +
+        "temp.device limit 5"
+    ).show()
+  }
+  /* 系统分类指标 sql 版 */
+  def indicatorsOfOs_SQL(): Unit ={
+    df.createTempView("vv")
+    df.sqlContext.sql(
+      "" +
+        "select " +
+        "temp.os, " +
+        "sum(temp.n1)," +
+        "sum(temp.n2)," +
+        "sum(temp.n3)," +
+        "sum(temp.n4)," +
+        "sum(temp.n5)," +
+        "sum(temp.n6)," +
+        "sum(temp.n7)," +
+        "sum(temp.n8)," +
+        "sum(temp.n9) from " +
+        "(select " +
+        "case client " +
+        "when 1 then 'android' " +
+        "when 2 then 'ios' " +
+        "else 'others' " +
+        "end as os," +
+        "if(requestmode == 1 and processnode >= 1,1,0) as n1," +
+        "if(requestmode == 1 and processnode >= 2,1,0) as n2," +
+        "if(requestmode == 1 and processnode == 3,1,0) as n3," +
+        "if(iseffective == 1 and isbilling == 1 and isbid == 1,1,0) as n4," +
+        "if(iseffective == 1 and isbilling == 1 and isbid == 1 and iswin == 1 and adorderid != 0,1,0) as n5," +
+        "if(requestmode == 2 and iseffective == 1,1,0) as n6," +
+        "if(requestmode == 3 and iseffective == 1,1,0) as n7," +
+        "if(iseffective == 1 and isbilling == 1 and iswin == 1,1,0) as n8," +
+        "if(iseffective == 1 and isbilling == 1 and iswin == 1,1,0) as n9 " +
+        "from vv) temp " +
+        "group by " +
+        "temp.os limit 100"
+    ).show(5)
+  }
+
+
+
+  // 单元测试
+  def test(): Unit ={
+    df.createTempView("vv")
+    df.sqlContext.sql("select adplatformproviderid from vv limit 20").show(200)
+//    val netKeyList: List[String] = List[String]("appname")
+//    IndicatorsUtils.indicatorsOfKeylist(df, netKeyList)
+//    indicatorsOfOs_SQL()
+  }
 }

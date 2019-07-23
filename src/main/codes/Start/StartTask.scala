@@ -27,7 +27,8 @@ object StartTask {
 //      // 将原始数据保存在parquet文件
 //      df.write.parquet("D:\\programs\\java_idea\\DMP\\src\\outPutFiles\\parquetFile")
 
-      val ct_prov_city_df: DataFrame = UtilsForProj.fetchFields(df)
+      // 获取需求一字段
+//      val ct_prov_city_df: DataFrame = UtilsForProj.fetchFields(df)
 
       /* 把数据存入mysql */
 //          UtilsForProj.loadToMysql(ct_prov_city_df)
