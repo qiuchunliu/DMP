@@ -11,8 +11,9 @@ import org.apache.spark.sql.{DataFrame, SparkSession}
   * 统计指标
   */
 object CountIndicators {
-
-  private val df: DataFrame = fetchFile()
+//  val sk: SparkSession = ConfigManager.fetchSparkSession()
+  val df: DataFrame = fetchFile()
+  val appDictBr: Broadcast[Map[String, String]] = fetchAppDict()
 
   def main(args: Array[String]): Unit = {
     test()
@@ -33,21 +34,26 @@ object CountIndicators {
   }
 
   /* 读取app映射文件 */
-  def fetchAppDict(): Broadcast[RDD[(String, String)]] ={
+  def fetchAppDict(): Broadcast[Map[String, String]] ={
       val ssc: SparkSession = ConfigManager.fetchSparkSession()
+    import ssc.implicits._
       val lines: RDD[String] = ssc
         .sparkContext.textFile("D:\\programs\\java_idea\\DMP\\src\\outPutFiles\\app_dict")
-      val br: RDD[(String, String)] = lines.map(e => {
-        (e.substring(e.indexOf(",")+1, e.indexOf(")")),e.substring(1, e.indexOf(",")))
-      })
-    val brcast: Broadcast[RDD[(String, String)]] = ssc.sparkContext.broadcast(br)
+      val br: Map[String, String] = lines.map(e => {
+        try{
+          (e.substring(1, e.indexOf(",")),e.substring(e.indexOf(",")+1, e.indexOf(")")))
+        }catch {
+          case t : StringIndexOutOfBoundsException => ("wrong", "wrong")
+        }
+      }).collect().toMap
+    val brcast: Broadcast[Map[String, String]] = ssc.sparkContext.broadcast(br)
     brcast
   }
 
   /* 读取parquet文件 */
   def fetchFile(): DataFrame ={
-    val sk: SparkSession = ConfigManager.fetchSparkSession()
-    val df: DataFrame = sk.read
+    val ssc: SparkSession = ConfigManager.fetchSparkSession()
+    val df: DataFrame = ssc.read
       // 可以把路径当作参数传进来
       .parquet("D:\\programs\\java_idea\\DMP\\src\\outPutFiles\\parquetFile")
     df
@@ -167,8 +173,8 @@ object CountIndicators {
         "if(iseffective == 1 and isbilling == 1 and isbid == 1 and iswin == 1 and adorderid != 0,1,0) as n5," +
         "if(requestmode == 2 and iseffective == 1,1,0) as n6," +
         "if(requestmode == 3 and iseffective == 1,1,0) as n7," +
-        "if(iseffective == 1 and isbilling == 1 and iswin == 1,1,0) as n8," +
-        "if(iseffective == 1 and isbilling == 1 and iswin == 1,1,0) as n9 " +
+        "if(iseffective == 1 and isbilling == 1 and iswin == 1,winprice/1000.0,0) as n8," +
+        "if(iseffective == 1 and isbilling == 1 and iswin == 1,adpayment/1000.0,0) as n9 " +
         "from vv) temp " +
         "group by " +
         "temp.os limit 100"

@@ -18,3 +18,9 @@ sparkSql 在判断条件时，不识别 && ，需要使用 and 连接条件
 case when 的使用
     "case devicetype when 1 then '手机' when 2 then '平板' else '其他' end as device,"
     注意 then 后边的 变量要加引号引起来，
+
+mkString() 方法的使用
+    val arr = Array[String]("3", "s", "r")
+    println(arr.mkString(","))  // 3,s,r
+
+

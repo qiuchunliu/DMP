@@ -105,9 +105,9 @@ object IndicatorsUtils {
     * @return 根据id查到的appname
     */
   def fixNullValue(appid: String): String ={
-    val appDicts: Broadcast[RDD[(String, String)]] = CountIndicators.fetchAppDict()
+    val appDicts: Broadcast[Map[String, String]] = CountIndicators.fetchAppDict()
     // 根据id查对应的appname
-    appDicts.value.collect().toMap.getOrElse("appid", "others")
+    appDicts.value.getOrElse("appid", "others")
   }
 
 }

@@ -4,6 +4,11 @@
       <w>adorderid</w>
       <w>adpayment</w>
       <w>adplatformproviderid</w>
+      <w>adspacetype</w>
+      <w>adspacetypename</w>
+      <w>androidid</w>
+      <w>androididmd</w>
+      <w>androididsha</w>
       <w>appdict</w>
       <w>appid</w>
       <w>appname</w>
@@ -12,6 +17,12 @@
       <w>dependencyfile</w>
       <w>devicetype</w>
       <w>hbase</w>
+      <w>idfa</w>
+      <w>idfamd</w>
+      <w>idfasha</w>
+      <w>imei</w>
+      <w>imeimd</w>
+      <w>imeisha</w>
       <w>isbid</w>
       <w>isbilling</w>
       <w>iseffective</w>
@@ -19,7 +30,13 @@
       <w>iswin</w>
       <w>keyist</w>
       <w>keylist</w>
+      <w>macidsha</w>
+      <w>macmd</w>
+      <w>macsha</w>
       <w>networkmannername</w>
+      <w>openudid</w>
+      <w>openudidmd</w>
+      <w>openudidsha</w>
       <w>processnode</w>
       <w>proj</w>
       <w>provincename</w>
