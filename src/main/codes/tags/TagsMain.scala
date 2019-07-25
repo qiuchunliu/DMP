@@ -58,7 +58,8 @@ object TagsMain {
       (userIdTags, adTags ++ channelTags ++ deviceTags ++ keyWordsTags ++ proCityTags)
     })
       .map(x => {  // 对每一条的数据的重复字段进行聚合
-      (x._1, x._2.groupBy(_._1).mapValues(_.size).toList)
+      (x._1, x._2.distinct)  // 直接对集合进行去重
+//      (x._1, x._2.groupBy(_._1).mapValues(_.size).toList)
     })
       .rdd.reduceByKey((l1, l2) =>
       (l1 ::: l2).groupBy(_._1).mapValues(a => {a.map(aa => aa._2).sum}).toList
