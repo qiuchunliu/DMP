@@ -8,12 +8,10 @@ object TagsUtils {
 
   // 过滤条件
   val userIdOne: String =
-  // 最后加一个条件，过滤调关键字字段为空的记录
     """
-      |(imei !='' or mac!='' or idfa != '' or openudid!='' or androidid!='' or
+      |imei !='' or mac!='' or idfa != '' or openudid!='' or androidid!='' or
       |imeimd5 !='' or macmd5!='' or idfamd5 != '' or openudidmd5!='' or androididmd5!='' or
-      |imeisha1 !='' or macsha1!='' or idfasha1 != '' or openudidsha1!='' or androididsha1!='') and
-      |keywords != ''
+      |imeisha1 !='' or macsha1!='' or idfasha1 != '' or openudidsha1!='' or androididsha1!=''
     """.stripMargin
 
   /* 用户id标签 */
@@ -89,7 +87,7 @@ object TagsUtils {
       case 1 => list :+= ("D00010001", 1)
       case 2 => list :+= ("D00010002", 1)
       case 3 => list :+= ("D00010003", 1)
-      case _ => list :+= ("D00010001", 1)
+      case _ => list :+= ("D00010004", 1)
     }
     // 联网方式
     row.getAs[String]("networkmannername") match {
@@ -124,12 +122,12 @@ object TagsUtils {
     val str: String = row.getAs[String]("keywords")
     if (str.contains("|")){
 
-      val keys: String = str
+      str
         .split("\\|")
         .filter(e => {e.length >= 3 && e.length <= 8})
         .filter(!br.value.contains(_))  // 要加过滤
-        .mkString(",")
-      list :+= ("K" + keys, 1)
+        .foreach(e => {list :+= ("K" + e, 1)})
+
     }
     list
   }
@@ -141,8 +139,12 @@ object TagsUtils {
     */
   def tagsProvCity(row: Row): List[(String, Int)] ={
     var list: List[(String, Int)] = List[(String, Int)]()
-    list:+= ("ZP" + row.getAs[String]("provincename"), 1)
-    list:+= ("ZC" + row.getAs[String]("cityname"), 1)
+    if (StringUtils.isNotBlank(row.getAs[String]("provincename"))) {
+      list:+= ("ZP" + row.getAs[String]("provincename"), 1)
+    }
+    if (StringUtils.isNotBlank(row.getAs[String]("cityname"))) {
+      list:+= ("ZC" + row.getAs[String]("cityname"), 1)
+    }
     list
   }
 

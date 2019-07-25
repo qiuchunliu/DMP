@@ -20,8 +20,8 @@ object TagsMain {
   private val br: Broadcast[Array[String]] = fetchKeysFilter()
 
   def main(args: Array[String]): Unit = {
-    val ds: Dataset[List[(String, Int)]] = fetchTags()
-    ds.rdd.take(100).foreach(println)
+    val ds: RDD[(String, List[(String, Int)])] = fetchTags()
+    ds.take(500).foreach(println)
 
   }
 
@@ -35,7 +35,7 @@ object TagsMain {
     ssc.sparkContext.broadcast(filters)
   }
 
-  def fetchTags(): Dataset[List[(String, Int)]] ={
+  def fetchTags(): RDD[(String, List[(String, Int)])] ={
     import ssc.implicits._
     df.filter(TagsUtils.userIdOne).map(row => {
       // 用户id标签
@@ -55,8 +55,17 @@ object TagsMain {
       /* 地域省市标签 */
       val proCityTags: List[(String, Int)] = TagsUtils.tagsProvCity(row)
 
-      userIdTags ++ adTags ++ channelTags ++ deviceTags ++ keyWordsTags ++ proCityTags
+      (userIdTags, adTags ++ channelTags ++ deviceTags ++ keyWordsTags ++ proCityTags)
     })
+      .map(x => {  // 对每一条的数据的重复字段进行聚合
+      (x._1, x._2.groupBy(_._1).mapValues(_.size).toList)
+    })
+      .rdd.reduceByKey((l1, l2) =>
+      (l1 ::: l2).groupBy(_._1).mapValues(a => {a.map(aa => aa._2).sum}).toList
+      // 如果用 .size 逻辑不对的
+//      (l1 ::: l2).groupBy(_._1).mapValues(_.size).toList
+    )
+      .map(a => (a._1.head._1, a._2))
   }
 
 }

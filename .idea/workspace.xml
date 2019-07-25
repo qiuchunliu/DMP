@@ -4,13 +4,10 @@
     <bookmark url="file://$PROJECT_DIR$/src/main/codes/indicator/CountIndicators.scala" line="99" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0231dba4-3968-4bfd-b3c2-b8d7f691401a" name="Default Changelist" comment="v">
-      <change afterPath="$PROJECT_DIR$/src/main/codes/toHbase/TryToHbase.scala" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/toHbase/TryToHbase$$anonfun$main$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/toHbase/TryToHbase$.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/toHbase/TryToHbase.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/qiuchunliu.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/qiuchunliu.xml" afterDir="false" />
+    <list default="true" id="0231dba4-3968-4bfd-b3c2-b8d7f691401a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/codes/tags/TagsMain.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/codes/tags/TagsMain.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/codes/tags/TagsUtils.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/codes/tags/TagsUtils.scala" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -38,17 +35,39 @@
     <option name="isMigrated" value="true" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/codes/toHbase/TryToHbase.scala">
+    <leaf>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/codes/tags/TagsUtils.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
+            <state relative-caret-position="697">
+              <caret line="133" lean-forward="true" selection-start-line="133" selection-end-line="133" />
               <folding>
-                <element signature="e#743#784#0" />
-                <element signature="e#1170#1540#0" />
-                <element signature="e#1167#1506#0" />
-                <element signature="e#1346#1432#0" />
+                <element signature="e#195#472#0" />
+                <element signature="e#2465#2892#0" />
+                <element signature="e#2590#2741#0" />
+                <element signature="e#2808#2879#0" />
+                <element signature="e#2896#3120#0" />
+                <element signature="e#3124#3231#0" />
+                <element signature="e#3124#4281#0" />
+                <element signature="e#3357#3563#0" />
+                <element signature="e#3580#3988#0" />
+                <element signature="e#4004#4268#0" />
+                <element signature="e#4285#4365#0" />
+                <element signature="e#4821#4892#0" />
+                <element signature="e#4821#5128#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/codes/tags/TagsMain.scala">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="300">
+              <caret line="64" column="24" selection-start-line="64" selection-start-column="24" selection-end-line="64" selection-end-column="24" />
+              <folding>
+                <element signature="n#!!doc;n#TagsMain$#0;n#!!top" />
+                <element signature="e#619#934#0" />
               </folding>
             </state>
           </provider>
@@ -77,6 +96,12 @@
       <find>ado</find>
       <find>provin</find>
       <find>配音语种</find>
+      <find>李</find>
+      <find>李树建</find>
+      <find>喜剧</find>
+      <find>,4</find>
+      <find>综艺娱乐</find>
+      <find>4d6d28f4edd7ba31</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -99,9 +124,9 @@
         <option value="$PROJECT_DIR$/src/main/codes/indicator/CountIndicators.scala" />
         <option value="$PROJECT_DIR$/notes.txt" />
         <option value="$PROJECT_DIR$/src/files/keyWordsFilter.txt" />
+        <option value="$PROJECT_DIR$/src/main/codes/toHbase/TryToHbase.scala" />
         <option value="$PROJECT_DIR$/src/main/codes/tags/TagsUtils.scala" />
         <option value="$PROJECT_DIR$/src/main/codes/tags/TagsMain.scala" />
-        <option value="$PROJECT_DIR$/src/main/codes/toHbase/TryToHbase.scala" />
       </list>
     </option>
   </component>
@@ -120,8 +145,8 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="896" />
-    <option name="y" value="87" />
+    <option name="x" value="895" />
+    <option name="y" value="86" />
     <option name="width" value="980" />
     <option name="height" value="1050" />
   </component>
@@ -133,9 +158,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
-      <pane id="CatdeaLogs" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -152,6 +174,12 @@
               <item name="DMP" type="b2602c69:ProjectViewProjectNode" />
               <item name="DMP" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="files" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="DMP" type="b2602c69:ProjectViewProjectNode" />
+              <item name="DMP" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -161,10 +189,77 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="codes" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="DMP" type="b2602c69:ProjectViewProjectNode" />
+              <item name="DMP" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="codes" type="462c0819:PsiDirectoryNode" />
+              <item name="conf" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="DMP" type="b2602c69:ProjectViewProjectNode" />
+              <item name="DMP" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="codes" type="462c0819:PsiDirectoryNode" />
+              <item name="constant" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="DMP" type="b2602c69:ProjectViewProjectNode" />
+              <item name="DMP" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="codes" type="462c0819:PsiDirectoryNode" />
+              <item name="indicator" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="DMP" type="b2602c69:ProjectViewProjectNode" />
+              <item name="DMP" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="codes" type="462c0819:PsiDirectoryNode" />
+              <item name="indicatorUtils" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="DMP" type="b2602c69:ProjectViewProjectNode" />
+              <item name="DMP" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="codes" type="462c0819:PsiDirectoryNode" />
+              <item name="Start" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="DMP" type="b2602c69:ProjectViewProjectNode" />
+              <item name="DMP" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="codes" type="462c0819:PsiDirectoryNode" />
+              <item name="tags" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="DMP" type="b2602c69:ProjectViewProjectNode" />
+              <item name="DMP" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="codes" type="462c0819:PsiDirectoryNode" />
+              <item name="toHbase" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="DMP" type="b2602c69:ProjectViewProjectNode" />
+              <item name="DMP" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="codes" type="462c0819:PsiDirectoryNode" />
+              <item name="utils" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
+      <pane id="CatdeaLogs" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -204,7 +299,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.TryToHbase">
+  <component name="RunManager" selected="Application.TagsMain">
     <configuration name="CountIndicators" type="Application" factoryName="Application" temporary="true">
       <option name="MAIN_CLASS_NAME" value="indicator.CountIndicators" />
       <module name="DMP" />
@@ -266,8 +361,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.TryToHbase" />
         <item itemvalue="Application.TagsMain" />
+        <item itemvalue="Application.TryToHbase" />
         <item itemvalue="Application.CountIndicators" />
         <item itemvalue="Application.StartTask" />
         <item itemvalue="Application.test" />
@@ -295,7 +390,8 @@
       <workItem from="1563848143513" duration="782000" />
       <workItem from="1563848974420" duration="27504000" />
       <workItem from="1563886260706" duration="601000" />
-      <workItem from="1563932605469" duration="23569000" />
+      <workItem from="1563932605469" duration="23663000" />
+      <workItem from="1564018039119" duration="9709000" />
     </task>
     <task id="LOCAL-00001" summary="v1">
       <created>1563794970762</created>
@@ -339,11 +435,18 @@
       <option name="project" value="LOCAL" />
       <updated>1563968855189</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="v7">
+      <created>1563971667743</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1563971667743</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="73247000" />
+    <option name="totallyTimeSpent" value="83050000" />
   </component>
   <component name="TodoView" selected-index="3">
     <todo-panel id="selected-file">
@@ -358,7 +461,7 @@
     <frame x="-7" y="-7" width="1550" height="848" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24865952" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25201073" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -367,7 +470,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.075418994" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.25" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -378,7 +481,7 @@
       <window_info anchor="bottom" id="Terminal" order="10" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="bottom" id="Java Enterprise" order="12" />
-      <window_info anchor="bottom" id="Messages" order="13" weight="0.30167598" />
+      <window_info anchor="bottom" id="Messages" order="13" weight="0.21927375" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -402,7 +505,8 @@
     <MESSAGE value="v4" />
     <MESSAGE value="v5" />
     <MESSAGE value="v6" />
-    <option name="LAST_COMMIT_MESSAGE" value="v6" />
+    <MESSAGE value="v7" />
+    <option name="LAST_COMMIT_MESSAGE" value="v7" />
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
@@ -434,20 +538,6 @@
     <entry file="file://$PROJECT_DIR$/src/main/codes/Start/test$.java" />
     <entry file="file://$PROJECT_DIR$/src/outPutFiles/out/provincename=广东省/cityname=东莞市/part-00000-ea0fcdab-f7bd-485a-9133-e115d0d88ebb.c000.json">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/files/2016-10-01_06_p1_invalid.1475274123982.log">
-      <provider selected="true" editor-type-id="LogFileEditorProvider">
-        <state relative-caret-position="21">
-          <caret line="13" column="45" selection-start-line="13" selection-start-column="45" selection-end-line="13" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.idea/scala_compiler.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="9" column="14" selection-start-line="9" selection-start-column="14" selection-end-line="9" selection-end-column="14" />
-        </state>
-      </provider>
     </entry>
     <entry file="jar://D:/softwares/apachemaven361/conf/LocalRepository/org/scala-lang/scala-library/2.11.8/scala-library-2.11.8-sources.jar!/scala/collection/TraversableOnce.scala">
       <provider selected="true" editor-type-id="text-editor">
@@ -482,9 +572,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/sqlfile.sql">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/sqlfile.sql" />
     <entry file="jar://D:/softwares/apachemaven361/conf/LocalRepository/org/scala-lang/scala-library/2.11.8/scala-library-2.11.8-sources.jar!/scala/Array.scala">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="8925">
@@ -587,58 +675,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/codes/indicator/CountIndicators.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="147">
-          <caret line="64" column="75" selection-start-line="64" selection-start-column="49" selection-end-line="64" selection-end-column="75" />
-          <folding>
-            <element signature="n#!!doc;n#CountIndicators$#0;n#!!top" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/codes/tags/TagsUtils.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="77" lean-forward="true" selection-start-line="77" selection-end-line="77" />
-          <folding>
-            <element signature="e#143#420#0" />
-            <element signature="e#113#276#0" />
-            <element signature="e#225#249#0" />
-            <element signature="e#138#565#0" />
-            <element signature="e#248#399#0" />
-            <element signature="e#466#537#0" />
-            <element signature="e#2896#3120#0" />
-            <element signature="e#3188#3205#0" />
-            <element signature="e#3188#4303#0" />
-            <element signature="e#3357#3563#0" />
-            <element signature="e#3580#3988#0" />
-            <element signature="e#4004#4268#0" />
-            <element signature="e#4349#4366#0" />
-            <element signature="e#4393#4626#0" />
-            <element signature="e#4609#4665#0" />
-            <element signature="e#4876#4893#0" />
-            <element signature="e#4876#4970#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/codes/tags/TagsMain.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="62" lean-forward="true" selection-start-line="62" selection-end-line="62" />
-          <folding>
-            <element signature="n#!!doc;n#TagsMain$#0;n#!!top" />
-            <element signature="e#187#235#0" />
-            <element signature="e#494#953#0" />
-            <element signature="e#601#632#0" />
-            <element signature="e#633#922#0" />
-            <element signature="e#938#1559#0" />
-            <element signature="e#1052#1555#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/notes.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="231">
@@ -660,6 +696,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/codes/indicator/CountIndicators.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-252">
+          <caret line="72" lean-forward="true" selection-start-line="72" selection-end-line="72" />
+          <folding>
+            <element signature="n#!!doc;n#CountIndicators$#0;n#!!top" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/codes/toHbase/TryToHbase.scala">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
@@ -669,6 +715,53 @@
             <element signature="e#1170#1540#0" />
             <element signature="e#1167#1506#0" />
             <element signature="e#1346#1432#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/scala_compiler.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="9" column="14" selection-start-line="9" selection-start-column="14" selection-end-line="9" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/files/2016-10-01_06_p1_invalid.1475274123982.log">
+      <provider selected="true" editor-type-id="LogFileEditorProvider">
+        <state relative-caret-position="161">
+          <caret line="839" column="235" selection-start-line="839" selection-start-column="219" selection-end-line="839" selection-end-column="235" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/codes/tags/TagsUtils.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="697">
+          <caret line="133" lean-forward="true" selection-start-line="133" selection-end-line="133" />
+          <folding>
+            <element signature="e#195#472#0" />
+            <element signature="e#2465#2892#0" />
+            <element signature="e#2590#2741#0" />
+            <element signature="e#2808#2879#0" />
+            <element signature="e#2896#3120#0" />
+            <element signature="e#3124#3231#0" />
+            <element signature="e#3124#4281#0" />
+            <element signature="e#3357#3563#0" />
+            <element signature="e#3580#3988#0" />
+            <element signature="e#4004#4268#0" />
+            <element signature="e#4285#4365#0" />
+            <element signature="e#4821#4892#0" />
+            <element signature="e#4821#5128#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/codes/tags/TagsMain.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="64" column="24" selection-start-line="64" selection-start-column="24" selection-end-line="64" selection-end-column="24" />
+          <folding>
+            <element signature="n#!!doc;n#TagsMain$#0;n#!!top" />
+            <element signature="e#619#934#0" />
           </folding>
         </state>
       </provider>
