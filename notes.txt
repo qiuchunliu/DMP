@@ -24,3 +24,25 @@ mkString() 方法的使用
     println(arr.mkString(","))  // 3,s,r
 
 
+
+基于RDD的分区，由于在spark中一个partition总是存储在一个excutor上，因此可以创建一个HBase连接，提交整个partition的内容
+    rdd.foreachPartition { records =>
+        val config = HBaseConfiguration.create
+        config.set("hbase.zookeeper.property.clientPort", "2181")
+        config.set("hbase.zookeeper.quorum", "a1,a2,a3")
+        val connection = ConnectionFactory.createConnection(config)
+        val table = connection.getTable(TableName.valueOf("rec:user_rec"))
+
+        // 举个例子而已，真实的代码根据records来
+        val list = new java.util.ArrayList[Put]
+        for(i <- 0 until 10){
+            val put = new Put(Bytes.toBytes(i.toString))
+            put.addColumn(Bytes.toBytes("t"), Bytes.toBytes("aaaa"), Bytes.toBytes("1111"))
+            list.add(put)
+        }
+        // 批量提交
+        table.put(list)
+        // 分区数据写入HBase后关闭连接
+        table.close()
+    }
+

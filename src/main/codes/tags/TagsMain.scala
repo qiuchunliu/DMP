@@ -20,9 +20,11 @@ object TagsMain {
   private val br: Broadcast[Array[String]] = fetchKeysFilter()
 
   def main(args: Array[String]): Unit = {
-    val ds: RDD[(String, List[(String, Int)])] = fetchTags()
-    ds.take(500).foreach(println)
+//    val ds: RDD[(String, List[(String, Int)])] = fetchTags()
+//    ds.take(500).foreach(println)
 
+
+    TagsUtils.tagsBusiness(df)
   }
 
   /**

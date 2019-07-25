@@ -12,11 +12,13 @@
       <w>appdict</w>
       <w>appid</w>
       <w>appname</w>
+      <w>baidu</w>
       <w>brcast</w>
       <w>cityname</w>
       <w>dependencyfile</w>
       <w>devicetype</w>
       <w>hbase</w>
+      <w>hdrdd</w>
       <w>idfa</w>
       <w>idfamd</w>
       <w>idfasha</w>
@@ -33,6 +35,7 @@
       <w>macidsha</w>
       <w>macmd</w>
       <w>macsha</w>
+      <w>mapreduce</w>
       <w>networkmannername</w>
       <w>openudid</w>
       <w>openudidmd</w>
@@ -41,6 +44,7 @@
       <w>proj</w>
       <w>provincename</w>
       <w>requestmode</w>
+      <w>rowkey</w>
       <w>tablename</w>
       <w>winprice</w>
     </words>

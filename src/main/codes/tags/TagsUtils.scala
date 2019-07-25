@@ -2,7 +2,8 @@ package tags
 
 import org.apache.commons.lang3.StringUtils
 import org.apache.spark.broadcast.Broadcast
-import org.apache.spark.sql.Row
+import org.apache.spark.sql.{DataFrame, Row}
+import tags.TagsMain.{df, ssc}
 
 object TagsUtils {
 
@@ -146,6 +147,26 @@ object TagsUtils {
       list:+= ("ZC" + row.getAs[String]("cityname"), 1)
     }
     list
+  }
+
+  /**
+    * business
+    * 商圈标签
+    * 通过经纬度字段获取商圈的名称
+    * 并保存
+    */
+  def tagsBusiness(df: DataFrame): Unit ={
+    import ssc.implicits._
+    df.filter(TagsUtils.userIdOne).map(row => {
+        // 获取经纬度
+        val longitude: String = row.getAs[String]("long")
+        // 获取维度
+        val latitude: String = row.getAs[String]("lat")
+      (longitude, latitude)
+      }
+    ).rdd.filter(e => {  // 此处过滤 空值 有问题，后续解决
+      !e._1.equals("0") && !e._2.equals("0")
+    }).take(50).foreach(println)
   }
 
 }
