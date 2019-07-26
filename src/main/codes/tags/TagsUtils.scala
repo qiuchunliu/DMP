@@ -1,5 +1,6 @@
 package tags
 
+import ch.hsr.geohash.GeoHash
 import org.apache.commons.lang3.StringUtils
 import org.apache.spark.broadcast.Broadcast
 import org.apache.spark.sql.{DataFrame, Row}
@@ -156,6 +157,7 @@ object TagsUtils {
     * 并保存
     */
   def tagsBusiness(df: DataFrame): Unit ={
+
     import ssc.implicits._
     df.filter(TagsUtils.userIdOne).map(row => {
         // 获取经纬度
@@ -165,7 +167,7 @@ object TagsUtils {
       (longitude, latitude)
       }
     ).rdd.filter(e => {  // 此处过滤 空值 有问题，后续解决
-      !e._1.equals("0") && !e._2.equals("0")
+      e._1.toDouble > 0 && e._2.toDouble > 0
     }).take(50).foreach(println)
   }
 
