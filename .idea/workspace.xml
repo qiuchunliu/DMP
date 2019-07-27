@@ -5,18 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0231dba4-3968-4bfd-b3c2-b8d7f691401a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/exam726/Examination.scala" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/exam726/json.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/exam726/需求文档.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/exam726/oldcodes.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/exam726/test.scala" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dictionaries/qiuchunliu.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/qiuchunliu.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/codes/toHbase/TryToHbase.scala" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/codes/utils/parseJson.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/codes/utils/parseJson.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/toHbase/TryToHbase$$anonfun$main$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/toHbase/TryToHbase$.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/toHbase/TryToHbase.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/utils/parseJson$$anonfun$main$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/utils/parseJson$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/utils/parseJson$.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/exam726/Examination.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/exam726/Examination.scala" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -44,16 +37,12 @@
     <option name="isMigrated" value="true" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+    <leaf>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/codes/tags/TagsMain.scala">
+        <entry file="file://$PROJECT_DIR$/src/main/exam726/test.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="925">
-              <caret line="71" column="3" lean-forward="true" selection-start-line="71" selection-start-column="3" selection-end-line="71" selection-end-column="3" />
-              <folding>
-                <element signature="n#!!doc;n#TagsMain$#0;n#!!top" />
-                <element signature="e#254#302#0" />
-              </folding>
+            <state relative-caret-position="84">
+              <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
             </state>
           </provider>
         </entry>
@@ -61,11 +50,20 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/exam726/Examination.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="168">
-              <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+            <state relative-caret-position="736">
+              <caret line="38" lean-forward="true" selection-start-line="38" selection-end-line="38" />
               <folding>
                 <element signature="e#0#57#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/exam726/json.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="210">
+              <caret line="10" column="38" selection-start-line="10" selection-start-column="38" selection-end-line="10" selection-end-column="38" />
             </state>
           </provider>
         </entry>
@@ -135,6 +133,8 @@
         <option value="$PROJECT_DIR$/src/main/codes/tags/TagsMain.scala" />
         <option value="$PROJECT_DIR$/src/main/codes/tags/TagsUtils.scala" />
         <option value="$PROJECT_DIR$/src/main/codes/utils/parseJson.scala" />
+        <option value="$PROJECT_DIR$/src/main/exam726/test.scala" />
+        <option value="$PROJECT_DIR$/src/main/exam726/oldcodes.txt" />
         <option value="$PROJECT_DIR$/src/main/exam726/Examination.scala" />
       </list>
     </option>
@@ -168,6 +168,8 @@
     </navigator>
     <panes>
       <pane id="CatdeaLogs" />
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -199,7 +201,7 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="codes" type="462c0819:PsiDirectoryNode" />
-              <item name="tags" type="462c0819:PsiDirectoryNode" />
+              <item name="baidumap" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="DMP" type="b2602c69:ProjectViewProjectNode" />
@@ -220,15 +222,13 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/exam726" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../for_scala/scala_from_mixing" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Libraries" />
@@ -296,19 +296,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="WriteToHbase_v3" type="Application" factoryName="Application" temporary="true">
-      <option name="MAIN_CLASS_NAME" value="toHbase.WriteToHbase_v3" />
-      <module name="DMP" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="toHbase.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="parseJson" type="Application" factoryName="Application" temporary="true">
       <option name="MAIN_CLASS_NAME" value="utils.parseJson" />
       <module name="DMP" />
@@ -322,13 +309,20 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="test" type="Application" factoryName="Application" temporary="true">
+      <option name="MAIN_CLASS_NAME" value="test" />
+      <module name="DMP" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Application.Examination" />
+        <item itemvalue="Application.test" />
         <item itemvalue="Application.parseJson" />
         <item itemvalue="Application.TagsMain" />
         <item itemvalue="Application.ReadHbase" />
-        <item itemvalue="Application.WriteToHbase_v3" />
       </list>
     </recent_temporary>
   </component>
@@ -356,6 +350,8 @@
       <workItem from="1563932605469" duration="23663000" />
       <workItem from="1564018039119" duration="29639000" />
       <workItem from="1564102812509" duration="28298000" />
+      <workItem from="1564186626166" duration="781000" />
+      <workItem from="1564194006536" duration="10682000" />
     </task>
     <task id="LOCAL-00001" summary="v1">
       <created>1563794970762</created>
@@ -434,11 +430,18 @@
       <option name="project" value="LOCAL" />
       <updated>1564121107870</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="v11_with_exam">
+      <created>1564186699549</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1564186699549</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="131278000" />
+    <option name="totallyTimeSpent" value="142741000" />
   </component>
   <component name="TodoView" selected-index="3">
     <todo-panel id="selected-file">
@@ -453,7 +456,7 @@
     <frame x="-7" y="-7" width="1550" height="848" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19906166" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1735925" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -462,7 +465,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49932975" weight="0.05865922" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49932975" visible="true" weight="0.08798882" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -501,25 +504,14 @@
     <MESSAGE value="v8" />
     <MESSAGE value="v9-load to hbase" />
     <MESSAGE value="v10" />
-    <option name="LAST_COMMIT_MESSAGE" value="v10" />
+    <MESSAGE value="v11_with_exam" />
+    <option name="LAST_COMMIT_MESSAGE" value="v11_with_exam" />
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/codes/test.scala" />
-    <entry file="file://$PROJECT_DIR$/src/main/codes/Start/test$.java" />
-    <entry file="file://$PROJECT_DIR$/src/outPutFiles/out/provincename=广东省/cityname=东莞市/part-00000-ea0fcdab-f7bd-485a-9133-e115d0d88ebb.c000.json">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="jar://D:/softwares/apachemaven361/conf/LocalRepository/org/scala-lang/scala-library/2.11.8/scala-library-2.11.8-sources.jar!/scala/collection/TraversableOnce.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="130">
-          <caret line="324" column="6" selection-start-line="324" selection-start-column="6" selection-end-line="324" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/files/app_dict.txt">
       <provider selected="true" editor-type-id="LargeFileEditor">
         <state>
@@ -666,16 +658,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/codes/baidumap/BaiduMap.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="146">
-          <caret line="87" column="12" selection-start-line="87" selection-start-column="12" selection-end-line="87" selection-end-column="12" />
-          <folding>
-            <element signature="e#18#61#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/files/2016-10-01_06_p1_invalid.1475274123982.log">
       <provider selected="true" editor-type-id="LogFileEditorProvider">
         <state relative-caret-position="161">
@@ -721,16 +703,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/codes/toHbase/TryToHbase.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="837">
-          <caret line="46" column="34" selection-start-line="46" selection-start-column="34" selection-end-line="46" selection-end-column="34" />
-          <folding>
-            <element signature="e#17#42#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/codes/toHbase/TryToHbase.scala" />
     <entry file="jar://D:/softwares/apachemaven361/conf/LocalRepository/org/apache/hbase/hbase-common/1.2.1/hbase-common-1.2.1-sources.jar!/org/apache/hadoop/hbase/HBaseConfiguration.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="296">
@@ -856,9 +829,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/exam726/json.txt">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/codes/utils/UtilsForProj.scala">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="189">
@@ -892,8 +862,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/codes/tags/TagsMain.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="925">
-          <caret line="71" column="3" lean-forward="true" selection-start-line="71" selection-start-column="3" selection-end-line="71" selection-end-column="3" />
+        <state relative-caret-position="624">
+          <caret line="71" column="3" selection-start-line="71" selection-start-column="3" selection-end-line="71" selection-end-column="3" />
           <folding>
             <element signature="n#!!doc;n#TagsMain$#0;n#!!top" />
             <element signature="e#254#302#0" />
@@ -901,10 +871,55 @@
         </state>
       </provider>
     </entry>
+    <entry file="jar://D:/softwares/apachemaven361/conf/LocalRepository/org/scala-lang/scala-library/2.11.8/scala-library-2.11.8-sources.jar!/scala/collection/LinearSeqOptimized.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="328">
+          <caret line="128" lean-forward="true" selection-start-line="128" selection-end-line="128" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/codes/baidumap/BaiduMap.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="777">
+          <caret line="46" column="24" lean-forward="true" selection-start-line="46" selection-start-column="24" selection-end-line="46" selection-end-column="24" />
+          <folding>
+            <element signature="e#18#61#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/exam726/test.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="84">
+          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/exam726/oldcodes.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="648">
+          <caret line="136" selection-start-line="136" selection-end-line="136" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/exam726/json.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="10" column="38" selection-start-line="10" selection-start-column="38" selection-end-line="10" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://D:/softwares/apachemaven361/conf/LocalRepository/org/scala-lang/scala-library/2.11.8/scala-library-2.11.8-sources.jar!/scala/collection/Iterator.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="526">
+          <caret line="892" column="6" selection-start-line="892" selection-start-column="6" selection-end-line="892" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/exam726/Examination.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+        <state relative-caret-position="736">
+          <caret line="38" lean-forward="true" selection-start-line="38" selection-end-line="38" />
           <folding>
             <element signature="e#0#57#0" expanded="true" />
           </folding>

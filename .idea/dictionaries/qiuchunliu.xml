@@ -34,6 +34,8 @@
       <w>ispname</w>
       <w>iswin</w>
       <w>jedis</w>
+      <w>jsonarray</w>
+      <w>jsonobject</w>
       <w>keyist</w>
       <w>keylist</w>
       <w>macidsha</w>

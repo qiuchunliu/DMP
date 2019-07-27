@@ -8,112 +8,83 @@ object Examination {
   private val ssc: SparkSession = SparkSession.builder().master("local[4]").appName("exam").getOrCreate()
 
   def main(args: Array[String]): Unit = {
-    val lines: RDD[String] = ssc.sparkContext.textFile("D:\\programs\\java_idea\\DMP\\src\\main\\exam726\\json.txt")
-    val jsonObs: RDD[JSONArray] = lines.map(l => {
-      JSON.parseObject(l)
-    }).filter(_.getString("status").equals("1")).map(e => {
-      e.getObject("regeocode", classOf[JSONObject]).getObject("pois", classOf[JSONArray])
-    })
-    val t: RDD[Map[String, Int]] = jsonObs.map(e => {
-      ff(e)
-    })
-    var list: List[(String, Int)] = List[(String, Int)]()
-    val tem: Array[List[(String, Int)]] = t.map(e => {
-      list ++= e.toList
-      list
+    val lines: RDD[String] =
+      ssc
+        .sparkContext
+        .textFile("D:\\programs\\java_idea\\DMP\\src\\main\\exam726\\json.txt")
+
+
+    var list1: List[(String, Int)] = List[(String, Int)]()
+    var list2: List[(String, Int)] = List[(String, Int)]()
+
+    /*
+     * 获取内部 jsonarray 的值
+     */
+    val res: Array[JSONArray] = lines.mapPartitions(p => {
+      p.map(e => {
+        // json 解析一个json串
+        JSON.parseObject(e)
+      }).filter(t => {
+        // 过滤掉状态码不是 1 的串
+        t.getString("status").equals("1")
+      }).map(e => {
+        // 获取内部的json串并转为jsonobject
+        e.getJSONObject("regeocode")
+      }).map(e => {
+        // 获取内部 pois 数据
+        // 返回一个数组，内部是各个 json 串
+        e.getObject("pois", classOf[JSONArray])
+      })
     }).collect()
-    var lis: List[(String, Int)] = List[(String, Int)]()
-    for (i <- tem){
-      lis ++= i
-    }
-    val lll: List[(String, Int)] = lis.groupBy(_._1).mapValues(e => {e.map(ee => ee._2).sum}).toList
-    lll.foreach(println)
 
-
-    var li: List[(String, Int)] = List[(String, Int)]()
-    var ll: List[(String, Int)] = List[(String, Int)]()
-
-    val temp: Array[List[(String, Int)]] = jsonObs.map(ee => {
-      val lis: List[(String, Int)] = f(ee)
-      li ++= lis
-      li
-    }).collect()
-    for (i <- temp) {
-      ll ++= i
-    }
-    val res: List[(String, Int)] = ll.groupBy(_._1).mapValues(e => {e.map(ee => ee._2).sum}).toList
-    res.foreach(e => {
-      if(!e._1.equals("[]")){
-        println(e)
+    /*
+     * 对每个jsonarray进行提取所需的数据
+     */
+    for (i <- res) {
+      /*
+       * 调用方法处理 JSONArray
+       * 返回一个列表
+       * 最后将每个返回的列表加一起
+       * 返回一个最终的列表
+       */
+      for (j <- parseJsonArray(i)) {
+        list1 :+= j._1
+        list2 ++= j._2
       }
-    })
+    }
 
-
+    val res1: Map[String, Int] = list1.filter(!_._1.equals("[]")).groupBy(_._1).mapValues(_.foldLeft(0)(_+_._2))
+    val res2: Map[String, Int] = list2.filter(!_._1.equals("[]")).groupBy(_._1).mapValues(_.foldLeft(0)(_+_._2))
+    res1.foreach(println)
+    res2.foreach(println)
   }
 
 
-  def f(e: JSONArray): List[(String, Int)] ={
-    var list: List[(String, Int)] = List[(String, Int)]()
-    for (i <- 0 until e.size()){
-      val obj: JSONObject = e.getObject(i, classOf[JSONObject])
+  /**
+    * 处理 jsonArray
+    * 返回一个集合
+    * @param e 需要处理的jsonarray
+    */
+  def parseJsonArray(e: JSONArray): List[((String, Int), List[(String, Int)])] ={
+
+    var list: List[((String, Int), List[(String, Int)])] = List[((String, Int), List[(String, Int)])]()
+
+    for (i <- 0 until e.size()) {
+      // 获取数组中的每一个JSONObject
+      val obj: JSONObject = e.getJSONObject(i)
+//      // 用户id
+//      // 但是不用统计
 //      val id: String = obj.getString("id")
+
+      // 位置信息
       val businessarea: String = obj.getString("businessarea")
-      list :+= (businessarea, 1)
+      // 商圈， 需要进行切分
+      val tp: String = obj.getString("type")
+      val tuples: List[(String, Int)] = tpSplit(tp)
+
+      list :+= ((businessarea, 1), tuples)
     }
     list
-  }
-
-  def ff(e: JSONArray): Map[String, Int] ={
-
-    var list: List[(String, Int)] = List[(String, Int)]()
-    for (i <- 0 until e.size()){
-      val obj: JSONObject = e.getObject(i, classOf[JSONObject])
-      val tp: String = obj.getString("type")
-      val tpv: List[(String, Int)] = tpSplit(tp)
-      list ++= tpv
-    }
-    list.groupBy(_._1).mapValues(_.size)
-
-  }
-
-
-  def businessareaTags(rdd: RDD[JSONObject]): RDD[Map[(String, String), Int]] ={
-    var list: List[((String, String), Int)] = List[((String, String), Int)]()
-    val t: RDD[List[((String, String), Int)]] = rdd.map(e => {
-      val arr: JSONArray = e.getObject("regeocode", classOf[JSONObject]).getObject("pois", classOf[JSONArray])
-      for (i <- 0 until arr.size()){
-        val nObject: JSONObject = arr.getObject(i, classOf[JSONObject])
-        val id: String = nObject.getString("id")
-        val businessarea: String = nObject.getString("businessarea")
-        list :+= ((id, businessarea), 1)
-//        println(list.mkString)
-      }
-      list
-    })
-    t.map(_.groupBy(e => {
-      e._1
-    }).mapValues(_.size))
-//    println(list.size)
-//    list
-  }
-
-  def typeTags(rdd: RDD[JSONObject]): RDD[List[(String, List[(String, Int)])]] ={
-    var list: List[(String, List[(String, Int)])] = List[(String, List[(String, Int)])]()
-
-    val t: RDD[List[(String, List[(String, Int)])]] = rdd.map(e => {
-      val arr: JSONArray = e.getObject("regeocode", classOf[JSONObject]).getObject("pois", classOf[JSONArray])
-      for (i <- 0 until arr.size()){
-        val nObject: JSONObject = arr.getObject(i, classOf[JSONObject])
-        val id: String = nObject.getString("id")
-        val tp: String = nObject.getString("type")
-        val lis: List[(String, Int)] = tpSplit(tp)
-        list :+= (id, lis)
-      }
-      list
-    })
-//    println(list.size)
-//    list
-    t
   }
 
   def tpSplit(tp: String): List[(String, Int)] ={
