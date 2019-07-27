@@ -14,6 +14,7 @@
       <w>appname</w>
       <w>baidu</w>
       <w>brcast</w>
+      <w>businessarea</w>
       <w>cityname</w>
       <w>dependencyfile</w>
       <w>dertyfdghjrtyfd</w>
@@ -43,9 +44,11 @@
       <w>openudid</w>
       <w>openudidmd</w>
       <w>openudidsha</w>
+      <w>pois</w>
       <w>processnode</w>
       <w>proj</w>
       <w>provincename</w>
+      <w>regeocode</w>
       <w>requestmode</w>
       <w>rowkey</w>
       <w>tablename</w>
